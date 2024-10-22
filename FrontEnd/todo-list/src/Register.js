@@ -14,7 +14,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://todo-list-v547.onrender.com/register', {
+      const response = await fetch('https://todo-list-v547.onrender.com:5000/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
