@@ -31,8 +31,7 @@ const app = express();
 const port = 10000;
 
 app.use(cors({
-  origin: 'https://todo-list-gray-delta-83.vercel.app/',
-  credentials: true,
+  origin: 'https://todo-list-gray-delta-83.vercel.app'
 }));
 app.use(bodyParser.json());
 
