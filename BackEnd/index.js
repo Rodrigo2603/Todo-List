@@ -13,11 +13,18 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
+pool.connect()
+  .then(client => {
+    console.log('Conexão ao banco de dados bem-sucedida');
+    client.release();
+  })
+  .catch(err => console.error('Erro ao conectar ao banco de dados', err.stack));
+
 const app = express();
 const port = 5000;
 
 app.use(cors({
-  origin: 'https://todo-list-gray-delta-83.vercel.app/', // Substitua pela URL do frontend em produção
+  origin: 'https://todo-list-gray-delta-83.vercel.app/',
   credentials: true,
 }));
 app.use(bodyParser.json());
