@@ -6,12 +6,19 @@ const { Pool } = require('pg');
 const bcrypt = require('bcrypt');
 
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+  connectionString: 'postgresql://todo_list_cblv_user:1ReduEO1dwhINjNjzTpJ9GloiGLeCXTE@dpg-csbteubtq21c73a860pg-a/todo_list_cblv',
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
+
+//const pool = new Pool({
+//  user: process.env.DB_USER,
+//  host: process.env.DB_HOST,
+//  database: process.env.DB_NAME,
+//  password: process.env.DB_PASSWORD,
+//  port: process.env.DB_PORT,
+//});
 
 pool.connect()
   .then(client => {
