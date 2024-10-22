@@ -16,7 +16,10 @@ const pool = new Pool({
 const app = express();
 const port = 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://todo-list-gray-delta-83.vercel.app/', // Substitua pela URL do frontend em produção
+  credentials: true,
+}));
 app.use(bodyParser.json());
 
 // Routes

@@ -12,7 +12,7 @@ const App = () => {
     const userId = localStorage.getItem('userId');
 
     if (userId) {
-      fetch(`http://localhost:5000/todos?userId=${userId}`)
+      fetch(`https://todo-list-v547.onrender.com/todos?userId=${userId}`)
         .then(response => response.json())
         .then(data => setTodos(data))
         .catch(error => console.error('Erro ao buscar tarefas:', error));
