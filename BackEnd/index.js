@@ -28,7 +28,7 @@ pool.connect()
   .catch(err => console.error('Erro ao conectar ao banco de dados', err.stack));
 
 const app = express();
-const port = 5000;
+const port = 10000;
 
 app.use(cors({
   origin: 'https://todo-list-gray-delta-83.vercel.app/',
