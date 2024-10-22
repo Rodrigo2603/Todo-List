@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-        const response = await fetch(`https://todo-list-v547.onrender.com:10000/login`, {
+        const response = await fetch(`https://todo-list-v547.onrender.com/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

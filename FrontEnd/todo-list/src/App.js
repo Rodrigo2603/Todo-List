@@ -12,7 +12,7 @@ const App = () => {
     const userId = localStorage.getItem('userId');
 
     if (userId) {
-      fetch(`https://todo-list-v547.onrender.com:10000/todos?userId=${userId}`)
+      fetch(`https://todo-list-v547.onrender.com/todos?userId=${userId}`)
         .then(response => response.json())
         .then(data => setTodos(data))
         .catch(error => console.error('Erro ao buscar tarefas:', error));
@@ -27,7 +27,7 @@ const App = () => {
     const newTodo = { title: todoTitle, completed: false, userId: userId };
 
     try {
-      const response = await fetch('https://todo-list-v547.onrender.com:10000/todos', {
+      const response = await fetch('https://todo-list-v547.onrender.com/todos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const App = () => {
 
   // Delete a task
   const deleteTodo = (id) => {
-    fetch(`https://todo-list-v547.onrender.com:10000/todos/${id}`, { method: 'DELETE' })
+    fetch(`https://todo-list-v547.onrender.com/todos/${id}`, { method: 'DELETE' })
       .then(() => {
         setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
       })
@@ -66,7 +66,7 @@ const App = () => {
 
     const updatedCompletedState = !todoToToggle.completed;
 
-    fetch(`https://todo-list-v547.onrender.com:10000/todos/${id}`, {
+    fetch(`https://todo-list-v547.onrender.com/todos/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
