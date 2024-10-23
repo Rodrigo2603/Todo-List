@@ -114,7 +114,6 @@ app.post('/register', async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(10);;
     const hashedPassword = await bcrypt.hash(password, salt);
-    console.log('aqui')
 
     const result = await pool.query(
       'INSERT INTO users (name, email, birth_date, password) VALUES ($1, $2, $3, $4) RETURNING *',
